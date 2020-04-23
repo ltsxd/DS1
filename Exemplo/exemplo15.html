@@ -1,0 +1,45 @@
+<!-- HTML:5 vvv -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Exemplo 15 - função chamando função</title>
+
+    <!-- copiado do site do bootstrap (css)-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- carrega o código em javascript-->
+    <script type="text/javascript">
+
+        //retorna qualquer msg
+        function mensagem() {
+            return "madeira no seu idade"
+
+        }
+        //pega o retorno da função mensagem e mostra um PopUp com o conteudo
+        function testar() {            
+            //alert(mensagem());
+            var msg = mensagem();
+
+            //imprime no console a variavel msg
+            console.log(msg);
+
+            //mostra um popup com o conteudo da variavel msg
+            alert(msg);            
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <button role="button" onclick="testar()">Gerar</button>
+
+</body>
+
+</html>

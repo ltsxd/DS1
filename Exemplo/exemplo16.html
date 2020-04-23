@@ -1,0 +1,53 @@
+<!-- HTML:5 vvv -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Exemplo 16 - notação de objetos javascript</title>
+
+    <!-- copiado do site do bootstrap (css)-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- carrega o código em javascript-->
+    <script type="text/javascript">
+
+        function criar() {
+            //mostra a mensagem no console
+            console.log("criando objeto");
+
+            //popula objeto com atributos e valores
+            var objeto = {
+                nome: "Lucas",
+                idade: "19",
+                endereco: "isso ai"
+            };
+            //retorna o objeto
+            return objeto;
+        }
+
+        function testar() {
+
+            //pega o retorno da função e atribui a variavel cliente
+            var cliente = criar();
+
+            //mostra um alerta com o conteudo da variavel cliente
+            alert( 'Nome: ' + cliente.nome +'\n'+
+                   'Idade: ' +cliente.idade +'\n'+
+                   'Endereço: ' +cliente.endereco);
+
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <button role="button" onclick="testar()">Gerar</button>
+
+</body>
+
+</html>
