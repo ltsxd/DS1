@@ -1,0 +1,31 @@
+.table {
+    margin-top: 20px;
+}
+thead .btn-link {
+    color: #fff;
+}
+thead .btn-link:hover {
+    color: #fff;
+}
+thead .active {
+    text-decoration: underline;
+    font-weight: bold;
+}
+.card-header,
+.card-footer {
+    display: flex;
+}
+.spacer {
+    flex: 1 1 auto;
+}
+.conteudo {
+    margin-top: 40px;
+}
+.sign {
+    margin: 0 auto;
+    padding-top: 20px;
+    width: 450px;
+}
+.sign .card {
+    margin-bottom: 15px;
+}

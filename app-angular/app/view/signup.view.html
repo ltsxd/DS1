@@ -1,0 +1,28 @@
+<div class="sign">
+    <div class="card">
+        <div class="card-body">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Nome completo" ng-model="usuario.nome">                
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" ng-class="{'is-invalid': userFail}" placeholder="Nome de usuário" ng-model="usuario.username">
+                <div class="invalid-feedback">
+                    Já existe um usuário com este nome de usuário!
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="Senha" ng-model="usuario.password">                
+            </div>
+
+            <div class="text-right">
+                <button class="btn btn-block btn-primary" ng-click="signup()">Cadastrar-se</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            Já é cadastrado? <a class="btn btn-link" href="#!/signin">Entre</a>
+        </div>
+    </div>
+</div>

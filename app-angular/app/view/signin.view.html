@@ -1,0 +1,28 @@
+<div class="sign">
+    <div class="card">
+        <div class="card-body">
+            <div class="form-group">
+                <input type="text" class="form-control" ng-class="{'is-invalid': userFail}" placeholder="Usuário" ng-model="username"> 
+                <div class="invalid-feedback">
+                    Usuário inválido!
+                </div>               
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" ng-class="{'is-invalid': passFail}" placeholder="Senha" ng-model="password">                
+                <div class="invalid-feedback">
+                    Senha inválida!
+                </div>
+            </div>
+
+            <div class="text-right">
+                <button class="btn btn-block btn-primary" ng-click="signin()">Entrar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            Não tem um conta? <a class="btn btn-link" href="#!/signup">Cadastre-se</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,83 @@
+<div class="card">
+    <div class="card-header">
+        Cadastro de Estados
+        <span class="spacer"></span>
+        <button class="btn btn-dark btn-sm" ng-click="novo()" ng-show="showTable">Novo</button>
+    </div>
+
+    <div class="card-body">
+
+        <div class="alert alert-danger text-center" ng-if="msgerro">
+            {{ msgerro }}
+        </div>
+
+        <div ng-if="showTable">
+            <input type="text" class="form-control form-control-lg" placeholder="Filtrar" ng-model="textFilter">
+
+            <table class="table table-bordered table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th width="50px">
+                            <button class="btn btn-link" ng-class="{'active': selectedColumn == 'id'}"
+                                ng-click="setColumn('id')">Código</button>
+                        </th>
+                        <th colspan="2">
+                            <button class="btn btn-link" ng-class="{'active': selectedColumn == 'nome'}"
+                                ng-click="setColumn('nome')">Nome Completo</button>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody ng-if="estados.length == 0">
+                    <tr>
+                        <td colspan="3">
+                            <p class="lead text-center text-muted">Nenhum estado foi cadastrado</p>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody ng-if="estados.length > 0">
+                    <tr ng-repeat="estado in estados | filter: filter() | orderBy: selectedColumn:decrescente">
+                        <td>{{ estado.id }}</td>
+                        <td width="100%">{{ estado.nome }}</td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-warning" ng-click="editar(estado)">Editar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div ng-if="!showTable">
+            <div class="form-group">
+                <label>Nome</label>
+                <input type="text" class="form-control" placeholder="Informe o nome do estado" ng-model="estado.nome">
+            </div>
+        </div>
+    </div>
+
+    <div class="card-footer" ng-if="!showTable">
+        <button class="btn btn-danger" ng-if="estado.id" data-toggle="modal"
+            data-target="#confirmModal">EXCLUIR</button>
+        <span class="spacer"></span>
+        <button class="btn btn-light" ng-click="cancelar()">CANCELAR</button>
+        <button class="btn btn-success" ng-click="salvar()">SALVAR</button>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="confirmModal" data-keyboard="false" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirmar Exclusão</h5>
+                </div>
+                <div class="modal-body">
+                    Deseja realmente excluir este registro?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-sm btn-light" data-dismiss="modal">CANCELAR</button>
+                    <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal"
+                        ng-click="excluir()">CONFIRMAR</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
